@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1244</width>
+    <height>689</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>501</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="fileBrowseButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>480</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open TXT file</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="summarizeButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>550</y>
+      <width>501</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Summarize</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>60</y>
+      <width>571</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelInput">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>15</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Enter your text here</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="textResetButton">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>480</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="copyTextButton">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>470</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>copy text</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="processLabel">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>550</y>
+      <width>441</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1244</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+   </widget>
+   <widget class="QMenu" name="menuModel">
+    <property name="title">
+     <string>Model</string>
+    </property>
+    <addaction name="actionExtractive"/>
+    <addaction name="actionAbstractive"/>
+    <addaction name="actionHybrid"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuModel"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionExtractive">
+   <property name="text">
+    <string>Extractive</string>
+   </property>
+  </action>
+  <action name="actionAbstractive">
+   <property name="text">
+    <string>Abstractive</string>
+   </property>
+  </action>
+  <action name="actionHybrid">
+   <property name="text">
+    <string>Hybrid</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
