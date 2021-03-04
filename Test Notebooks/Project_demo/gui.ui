@@ -29,26 +29,31 @@
      <rect>
       <x>30</x>
       <y>480</y>
-      <width>93</width>
-      <height>28</height>
+      <width>111</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>Open TXT file</string>
+     <string>Open file</string>
     </property>
    </widget>
    <widget class="QPushButton" name="summarizeButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>550</y>
-      <width>501</width>
-      <height>61</height>
+      <x>250</x>
+      <y>500</y>
+      <width>281</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
@@ -59,9 +64,9 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>60</y>
+      <y>80</y>
       <width>571</width>
-      <height>391</height>
+      <height>201</height>
      </rect>
     </property>
    </widget>
@@ -69,14 +74,14 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>15</y>
-      <width>241</width>
+      <y>10</y>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>14</pointsize>
      </font>
     </property>
     <property name="text">
@@ -86,11 +91,16 @@
    <widget class="QPushButton" name="textResetButton">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>480</y>
-      <width>93</width>
-      <height>28</height>
+      <x>30</x>
+      <y>550</y>
+      <width>111</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Reset</string>
@@ -107,6 +117,70 @@
     </property>
     <property name="text">
      <string>copy text</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>410</y>
+      <width>571</width>
+      <height>201</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>20</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="text">
+     <string>Extractive Summary</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>340</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="text">
+     <string>Abstractive Summary</string>
     </property>
    </widget>
   </widget>
