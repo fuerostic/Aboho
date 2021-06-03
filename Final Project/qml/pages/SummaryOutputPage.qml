@@ -5,6 +5,8 @@ import "../controls"
 Item {
     id: item1
 
+    property string outText: ""
+
     Rectangle {
         id: rectangle
         color: "#383e4b"
@@ -113,6 +115,8 @@ Item {
 
         }
     }
+
+
 
 
 }

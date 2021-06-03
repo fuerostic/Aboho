@@ -114,8 +114,8 @@ Item {
                     anchors.fill: parent
                     anchors.rightMargin: 10
                     anchors.leftMargin: 10
-                    anchors.bottomMargin: 10
-                    anchors.topMargin: 10
+                    anchors.bottomMargin: 15
+                    anchors.topMargin: 15
                     visible: root.focus
                     radius: 10
 
@@ -129,6 +129,7 @@ Item {
                         anchors.bottom: parent.bottom
                         font.pixelSize: 12
                         wrapMode: Text.Wrap
+                        clip: true
                         anchors.topMargin: 10
                         anchors.bottomMargin: 10
                         anchors.rightMargin: 10
@@ -175,6 +176,10 @@ Item {
                     antialiasing: false
                     radiusBtn: 10
 
+                    onClicked: {
+                        backend.fileOpen("")
+                    }
+
 
                 }
 
@@ -205,15 +210,6 @@ Item {
                 height: 40
 
                 onClicked:{
-                    //                        pagesHomeView.visible = false
-                    //                        pagesSummarizeView.visible = false
-                    //                        pagesSentimentView.visible = false
-                    //                        pagesWordCloudView.visible = false
-                    //                        pagesSettingsView.visible = false
-                    //                        pagesSummaryOutputView.visible = true
-                    //                        pagesSentimentOutputView.visible = false
-                    //                        pagesWordCloudOutputView.visible = false
-
 
                     backend.summaryCreate(textEdit.text.toString())
 
@@ -229,6 +225,25 @@ Item {
                 btnIconSource: "../../images/svg_images/restart_alt_black_24dp.svg"
                 anchors.topMargin: 32
                 anchors.rightMargin: 45
+
+                onClicked: {
+                    textEdit.text = ""
+                }
+            }
+
+            CustomImageButton {
+                id: copyButton
+                x: 720
+                anchors.right: parent.right
+                anchors.top: parent.top
+                anchors.rightMargin: 80
+                anchors.topMargin: 32
+                btnIconSource: "../../images/svg_images/content_copy_black_24dp.svg"
+                btnColorDefault: "#00000000"
+
+                onClicked: {
+                    backend.textCopy(textEdit.text.toString())
+                }
             }
 
         }
@@ -241,11 +256,25 @@ Item {
         target: backend
 
         function onGetInput(text){
+
+            textEdit.text = text
+        }
+
+
+        function onCopyText(text){
+
+
+
+        }
+
+        function onOpenTxtFile(text){
             textEdit.text = text
         }
 
 
     }
+
+
 
 }
 
@@ -254,6 +283,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.75;height:600;width:1000}
+    D{i:0;autoSize:true;formeditorZoom:0.9;height:600;width:1000}D{i:20}
 }
 ##^##*/

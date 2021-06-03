@@ -4,6 +4,7 @@
 #     pass
 
 from summarizer import Summarizer
+import easygui
 
 
 def summarizer(paragraph):
@@ -13,6 +14,21 @@ def summarizer(paragraph):
     summary = "".join(result)
     print("end")
     return summary
+
+def openFile():
+        file = easygui.fileopenbox()
+        print(file)
+        texts = []
+        f = open(file,"r",encoding = "utf8")
+
+        lines = f.readlines()
+
+        f.close()
+
+        str = "".join(lines)
+
+        return str
+
 
 
 

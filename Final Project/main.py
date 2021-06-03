@@ -6,15 +6,24 @@ import sys
 from PySide2.QtGui import QGuiApplication
 from PySide2.QtQml import QQmlApplicationEngine
 from PySide2.QtCore import QObject, Slot, Signal
-from SummaryBert import summarizer
+from SummaryBert import summarizer,openFile
+from SentimentBert import sentimentAnalyser
+from WordCloudGenerator import cloudGenerate
+import  clipboard
+import easygui
 
 
 class MainWindow(QObject):
     def __init__(self):
         QObject.__init__(self)
 
+
     #set name
     getInput = Signal(str)
+    copyText = Signal(str)
+    openTxtFile = Signal(str)
+    getSentimentInput = Signal(str)
+    getWordCloudInput = Signal(str)
     #setSentiment = Signal(str)
 
 
@@ -30,9 +39,46 @@ class MainWindow(QObject):
         #print(text)
         self.getInput.emit(summ)
 
-#    def welcomeText(self,name):
-#        self.setName.emit("welcome " + name)
 
+    @Slot(str)
+    def textCopy(self,text):
+        clipboard.copy(text)
+        self.getInput.emit("Copied to clipboard")
+
+
+    @Slot(str)
+    def fileOpen(self,param):
+        file = easygui.fileopenbox()
+        print(file)
+        texts = []
+        f = open(file,"r",encoding = "utf8")
+
+        lines = f.readlines()
+
+        f.close()
+
+
+        input = "".join(lines)
+        self.openTxtFile.emit(input)
+
+
+
+
+    @Slot(str)
+    def sentimentParsing(self, text):
+        print("started")
+        result = sentimentAnalyser(text)
+        print(result)
+        print("ended")
+        self.getSentimentInput.emit(result)
+
+
+    @Slot(str)
+    def wordParsing(self,text):
+        print("started")
+        source = cloudGenerate(text)
+        print("end")
+        self.getWordCloudInput.emit(source)
 
 
 

@@ -51,19 +51,48 @@ Item {
                 anchors.leftMargin: 45
                 radius: 10
 
-                CustomTextField{
-                    id: sentiField
-                    x: 45
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
+
+                Rectangle{
+                    color: "#282c34"
+                    anchors.fill: parent
                     anchors.rightMargin: 10
-                    anchors.topMargin: 15
-                    anchors.bottomMargin: 15
                     anchors.leftMargin: 10
+                    anchors.bottomMargin: 15
+                    anchors.topMargin: 15
+                    visible: root.focus
+                    radius: 10
+
+
+                    TextEdit {
+                        id: sentifield
+                        //text: qsTr("Enter text here")
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
+                        font.pixelSize: 12
+                        wrapMode: Text.Wrap
+                        clip: true
+                        anchors.topMargin: 10
+                        anchors.bottomMargin: 10
+                        anchors.rightMargin: 10
+                        anchors.leftMargin: 10
+
+
+
+                        property string placeholderText: "Enter text here..."
+                        color: "#ffffff"
+
+                        Text {
+                            text: sentifield.placeholderText
+                            color: "#aaa"
+                            visible: !textEdit.text
+                        }
+                    }
 
                 }
+
+
             }
 
             Rectangle {
@@ -77,6 +106,7 @@ Item {
                 anchors.topMargin: 20
 
                 TopBarButton{
+                    id: fileOpenbutton
                     y: 11
                     width: 25
                     height: 25
@@ -89,6 +119,10 @@ Item {
                     btnColorDefault: "#5b687d"
                     antialiasing: false
                     radiusBtn: 10
+
+                    onClicked: {
+                        backend.fileOpen("")
+                    }
 
 
                 }
@@ -121,63 +155,76 @@ Item {
 
                 onClicked:{
 
-
+                    backend.sentimentParsing(sentifield.text)
                 }
-            }
-
-            CustomImageButton {
-                id: resetButton
-                x: 720
-                anchors.right: parent.right
-                anchors.top: parent.top
-                btnColorDefault: "#00000000"
-                btnIconSource: "../../images/svg_images/restart_alt_black_24dp.svg"
-                anchors.topMargin: 30
-                anchors.rightMargin: 45
             }
 
             Rectangle {
                 id: rectangle
-                width: 570
-                height: 105
+                height: 100
                 color: "#00000000"
                 anchors.left: parent.left
+                anchors.right: parent.right
                 anchors.top: sentiButton.bottom
-                anchors.topMargin: 9
+                anchors.rightMargin: 45
                 anchors.leftMargin: 45
-
-                CustomTextField {
-                    id: outputText
-                    x: 50
-                    y: 20
-                    width: 703
-                    height: 293
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
-                    anchors.rightMargin: 150
-                    anchors.leftMargin: 0
-                    anchors.bottomMargin: 22
-                    anchors.topMargin: 20
-                    enabled: false
-                }
+                anchors.topMargin: 20
 
                 Image {
                     id: sentimentImage
-                    y: 13
-                    anchors.left: parent.left
+                    x: 650
+                    y: 374
+                    anchors.left: outputText.right
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
                     source: sentiImage
                     anchors.bottomMargin: 10
-                    anchors.leftMargin: 436
+                    anchors.leftMargin: 20
                     anchors.topMargin: 10
                     anchors.rightMargin: 10
                     fillMode: Image.PreserveAspectFit
 
                 }
+
+                Rectangle {
+                    id: outputRec
+                    color: "#282c34"
+                    anchors.left: parent.left
+                    anchors.right: sentimentImage.left
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.rightMargin: 200
+                    anchors.leftMargin: 0
+                    anchors.bottomMargin: 30
+                    anchors.topMargin: 30
+                    radius: 10
+
+                    TextEdit {
+                        id: outputText
+                        color: "#e6e8e9"
+                        anchors.fill: parent
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pointSize: 20
+                        enabled: false
+                }
+            }
+        }
+
+        CustomImageButton {
+            id: resetButton
+            x: 720
+            anchors.right: parent.right
+            anchors.top: parent.top
+            btnColorDefault: "#00000000"
+            btnIconSource: "../../images/svg_images/restart_alt_black_24dp.svg"
+            anchors.topMargin: 30
+            anchors.rightMargin: 45
+
+            onClicked: {
+
+                sentifield.text = ""
+
             }
 
 
@@ -189,11 +236,31 @@ Item {
 
 
     }
+
+
+    Connections{
+        target: backend
+
+        function onGetSentimentInput(text){
+
+            outputText.text = text
+        }
+
+
+        function onOpenTxtFile(text){
+            sentifield.text = text
+        }
+
+
+
+    }
+
+}
 }
 
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:10}D{i:12}D{i:13}D{i:11}
+    D{i:0;autoSize:true;height:480;width:640}D{i:15}D{i:14}D{i:12}
 }
 ##^##*/
