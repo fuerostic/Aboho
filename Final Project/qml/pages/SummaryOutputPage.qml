@@ -34,9 +34,9 @@ Item {
 
             id:outputText
             x: 50
-            y: 20
+            y: 85
             width: 703
-            height: 293
+            height: 228
             anchors.rightMargin: 45
             anchors.leftMargin: 45
             anchors.bottomMargin: 163

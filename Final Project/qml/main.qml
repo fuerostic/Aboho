@@ -503,6 +503,12 @@ Window {
                         source: Qt.resolvedUrl("pages/HomePage.qml")
                         visible: true
 
+                        BusyIndicator {
+                            id: busyIndicator
+                            x: 478
+                            y: 380
+                        }
+
                     }
 
                     Loader{
@@ -555,6 +561,14 @@ Window {
                         id: pagesWordCloudOutputView
                         anchors.fill: parent
                         source: Qt.resolvedUrl("pages/WordCloudOutputPage.qml")
+                        visible: false
+
+                    }
+
+                    Loader{
+                        id: progressbarView
+                        anchors.fill: parent
+                        source: Qt.resolvedUrl("pages/LoadingPage.qml")
                         visible: false
 
                     }

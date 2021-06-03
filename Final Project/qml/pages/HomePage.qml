@@ -49,12 +49,26 @@ Item {
 
             Label {
                 id: labelName
-                x: 239
-                y: 135
+                x: 267
+                y: -38
                 width: 119
                 height: 37
                 text: qsTr("Label")
             }
+        }
+
+        TextEdit {
+            id: textEdit
+            height: 161
+            text: qsTr("Text Edit")
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            font.pixelSize: 12
+            wrapMode: Text.Wrap
+            anchors.topMargin: 223
+            anchors.leftMargin: 99
+            anchors.rightMargin: 168
         }
     }
 
@@ -70,6 +84,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}
+    D{i:0;autoSize:true;height:480;width:640}D{i:7}
 }
 ##^##*/

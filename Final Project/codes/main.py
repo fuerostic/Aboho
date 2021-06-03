@@ -6,7 +6,6 @@ import sys
 from PySide2.QtGui import QGuiApplication
 from PySide2.QtQml import QQmlApplicationEngine
 from PySide2.QtCore import QObject, Slot, Signal
-from SummaryBert import summarizer
 
 
 class MainWindow(QObject):
@@ -14,24 +13,12 @@ class MainWindow(QObject):
         QObject.__init__(self)
 
     #set name
-    getInput = Signal(str)
-    #setSentiment = Signal(str)
-
+    setName = Signal(str)
 
     @Slot(str)
-    def summaryCreate(self,text):
-        print("start")
 
-        #ascii_string = unicode_string.encode('ascii', 'ignore')
-
-       # text = text.encode('ascii', 'ignore')
-
-        summ = summarizer(text)
-        #print(text)
-        self.getInput.emit(summ)
-
-#    def welcomeText(self,name):
-#        self.setName.emit("welcome " + name)
+    def welcomeText(self,name):
+        self.setName.emit("welcome " + name)
 
 
 
@@ -42,11 +29,8 @@ if __name__ == "__main__":
     engine = QQmlApplicationEngine()
 
     #get context
-    print("Here 1")
     main = MainWindow()
-    print("Here 2")
     engine.rootContext().setContextProperty("backend",main)
-    print("Here 3")
 
     #load qml file
     engine.load(os.fspath(Path(__file__).resolve().parent / "qml/main.qml"))
