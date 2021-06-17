@@ -8,8 +8,8 @@ Window {
     id: mainWindow
     width: 1366
     height: 768
-    minimumHeight: 500
-    minimumWidth: 800
+    minimumHeight: 768
+    minimumWidth: 1366
     visible: true
     color: "#00000000"
 
@@ -117,7 +117,7 @@ Window {
 
             Rectangle {
                 id: topBar
-                height: 60
+                height: 80
                 color: "#1c1d20"
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -127,6 +127,7 @@ Window {
                 anchors.topMargin: 0
 
                 ToggleButton{
+                    height: 80
                     onClicked: animationMenu.running = true
 
                 }
@@ -158,7 +159,7 @@ Window {
                     Label {
                         id: labelTopInfo
                         color: "#c2c2c2"
-                        text: qsTr("Application Description")
+                        text: qsTr("আবহ একটি বাংলা ভাষার বিশ্লেষণমূলক ইউটিলিটি সফটওয়্যার")
                         anchors.left: parent.left
                         anchors.right: parent.right
                         anchors.top: parent.top
@@ -172,7 +173,7 @@ Window {
                     Label {
                         id: labelRightInfo
                         color: "#c2c2c2"
-                        text: qsTr("Home")
+                        text: qsTr("")
                         anchors.left: labelTopInfo.right
                         anchors.right: parent.right
                         anchors.top: parent.top
@@ -188,7 +189,7 @@ Window {
 
                 Rectangle {
                     id: titleBar
-                    height: 35
+                    height: 55
                     color: "#00000000"
                     anchors.left: parent.left
                     anchors.right: parent.right
@@ -206,7 +207,7 @@ Window {
 
                     Image {
                         id: iconApp
-                        width: 28
+                        width: 55
                         anchors.left: parent.left
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
@@ -221,13 +222,13 @@ Window {
                     Label {
                         id: label
                         color: "#c6c6c6"
-                        text: qsTr("My application title")
+                        text: qsTr("আবহ")
                         anchors.left: iconApp.right
                         anchors.right: parent.right
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
                         verticalAlignment: Text.AlignVCenter
-                        font.pointSize: 13
+                        font.pointSize: 20
                         anchors.leftMargin: 5
                     }
                 }
@@ -244,6 +245,8 @@ Window {
 
                     TopBarButton{
                         id: minimizeBtn
+                        width: 35
+                        height: 55
                         onClicked: {
                             mainWindow.showMinimized()
                             internal.restoreMargin()
@@ -253,6 +256,8 @@ Window {
 
                     TopBarButton {
                         id: maximizeBtn
+                        width: 35
+                        height: 55
                         btnIconSource: "../images/svg_images/maximize_icon.svg"
                         onClicked: internal.maximizeRestore()
 
@@ -260,6 +265,8 @@ Window {
 
                     TopBarButton {
                         id: closeBtn
+                        width: 35
+                        height: 55
                         onClicked: mainWindow.close()
                         btnIconSource: "../images/svg_images/close_black_24dp.svg"
                     }
@@ -322,7 +329,8 @@ Window {
                             width: leftMenu.width
                             height: 60
                             visible: true
-                            text: qsTr("Home")
+                            text: qsTr("হোম")
+                            font.pointSize: 12
                             isActiveMenu: true
 
                             onClicked: {
@@ -351,7 +359,8 @@ Window {
                             width: leftMenu.width
                             height: 60
                             visible: true
-                            text: qsTr("Summarize")
+                            text: qsTr("সংক্ষিপ্তকরন")
+                            font.pointSize: 12
                             btnIconSource: "../images/svg_images/summarize_black_24dp.svg"
 
                             onClicked: {
@@ -381,7 +390,8 @@ Window {
                             width: leftMenu.width
                             height: 60
                             visible: true
-                            text: qsTr("Sentiment Analysis")
+                            text: qsTr("অনুভূতি বিশ্লেষণ")
+                            font.pointSize: 12
                             btnIconSource: "../images/svg_images/sentiment_satisfied_black_24dp.svg"
 
                             onClicked: {
@@ -411,7 +421,8 @@ Window {
                             width: leftMenu.width
                             height: 60
                             visible: true
-                            text: qsTr("Word Cloud")
+                            text: qsTr("শব্দ মেঘ")
+                            font.pointSize: 12
                             btnIconSource: "../images/svg_images/cloud_black_24dp.svg"
 
                             onClicked: {
@@ -442,8 +453,9 @@ Window {
                         width: leftMenu.width
                         height: 60
                         visible: true
-                        text: qsTr("Settings")
+                        text: qsTr("আমাদের সম্পর্কে")
                         anchors.bottom: parent.bottom
+                        font.pointSize: 12
                         anchors.bottomMargin: 25
                         btnIconSource: "../images/svg_images/settings_black_24dp.svg"
 //                        onClicked: {
@@ -502,12 +514,6 @@ Window {
                         anchors.fill: parent
                         source: Qt.resolvedUrl("pages/HomePage.qml")
                         visible: true
-
-                        BusyIndicator {
-                            id: busyIndicator
-                            x: 478
-                            y: 380
-                        }
 
                     }
 
@@ -590,7 +596,7 @@ Window {
                     Label {
                         id: labelBottomInfo
                         color: "#c2c2c2"
-                        text: qsTr("Application Description")
+                        text: qsTr("আবহ ১৪২৮ বঙ্গাব্দ")
                         anchors.left: parent.left
                         anchors.right: parent.right
                         anchors.top: parent.top
@@ -747,6 +753,6 @@ Window {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:35}D{i:42}
+    D{i:0;formeditorZoom:0.66}
 }
 ##^##*/

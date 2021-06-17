@@ -85,14 +85,14 @@ Item {
             Label {
                 id: summaryLabel
                 color: "#e6e8e9"
-                text: qsTr("Summarize page")
+                text: qsTr("পাঠ্য সংক্ষিপ্তকরণ")
                 anchors.left: parent.left
                 anchors.top: parent.top
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.leftMargin: 56
-                anchors.topMargin: 22
-                font.pointSize: 16
+                anchors.topMargin: 20
+                font.pointSize: 26
             }
 
             Rectangle {
@@ -103,7 +103,7 @@ Item {
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 262
-                anchors.topMargin: 65
+                anchors.topMargin: 80
                 anchors.rightMargin: 45
                 anchors.leftMargin: 45
                 radius: 10
@@ -127,7 +127,7 @@ Item {
                         anchors.right: parent.right
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
-                        font.pixelSize: 12
+                        font.pixelSize: 16
                         wrapMode: Text.Wrap
                         clip: true
                         anchors.topMargin: 10
@@ -137,7 +137,7 @@ Item {
 
 
 
-                        property string placeholderText: "Enter text here..."
+                        property string placeholderText: "এখানে পাঠ্য প্রবেশ করুন..."
                         color: "#ffffff"
 
                         Text {
@@ -163,14 +163,14 @@ Item {
                 anchors.topMargin: 20
 
                 TopBarButton{
-                    y: 11
                     width: 25
                     height: 25
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.rightMargin: 137
-                    anchors.leftMargin: 162
+                    anchors.top: parent.top
+                    anchors.verticalCenterOffset: 5
+                    anchors.topMargin: 15
+                    anchors.leftMargin: 283
                     btnIconSource: "../../images/svg_images/open_icon.svg"
                     btnColorDefault: "#5b687d"
                     antialiasing: false
@@ -186,11 +186,12 @@ Item {
                 Label {
                     id: label
                     color: "#ffffff"
-                    text: qsTr("Enter Text from Txt file")
+                    text: qsTr("এখানে পাঠ্য প্রবেশ করুন .txt ফাইল হতে")
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
+                    font.pointSize: 12
                     anchors.rightMargin: 282
                     anchors.leftMargin: 0
                     anchors.bottomMargin: 15
@@ -200,9 +201,10 @@ Item {
 
             CustomButton{
                 id: summarizeButton
-                text: "Summarize"
+                text: "সংক্ষিপ্ত করুন"
                 anchors.left: parent.left
                 anchors.top: fromTxtFileArea.bottom
+                font.pointSize: 12
                 anchors.topMargin: 10
                 anchors.leftMargin: 45
                 colorDefault: "#5b687d"

@@ -6,11 +6,14 @@ import sys
 from PySide2.QtGui import QGuiApplication
 from PySide2.QtQml import QQmlApplicationEngine
 from PySide2.QtCore import QObject, Slot, Signal
-from SummaryBert import summarizer,openFile
+from SummaryBert import summarizer, openFile
 from SentimentBert import sentimentAnalyser
 from WordCloudGenerator import cloudGenerate
 import  clipboard
 import easygui
+from threading import *
+import concurrent.futures
+from Multiprocess import MyThread
 
 
 class MainWindow(QObject):
@@ -30,12 +33,18 @@ class MainWindow(QObject):
     @Slot(str)
     def summaryCreate(self,text):
         print("start")
+        t = MyThread(summarizer,args=text)
+        t.start()
+        t.join () # Be sure to join, otherwise the main thread will run faster than the child thread and you will not get results
+        print (t.get_result())
+
 
         #ascii_string = unicode_string.encode('ascii', 'ignore')
 
-       # text = text.encode('ascii', 'ignore')
+        # text = text.encode('ascii', 'ignore')
 
-        summ = summarizer(text)
+        summ = t.get_result()
+
         #print(text)
         self.getInput.emit(summ)
 

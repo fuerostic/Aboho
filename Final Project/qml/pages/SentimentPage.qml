@@ -28,14 +28,14 @@ Item {
             Label {
                 id: sentiLabel
                 color: "#e6e8e9"
-                text: qsTr("Sentiment analysis page")
+                text: qsTr("অনুভূতি বিশ্লেষণ")
                 anchors.left: parent.left
                 anchors.top: parent.top
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 anchors.leftMargin: 56
-                anchors.topMargin: 22
-                font.pointSize: 16
+                anchors.topMargin: 20
+                font.pointSize: 26
             }
 
             Rectangle {
@@ -46,7 +46,7 @@ Item {
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 262
-                anchors.topMargin: 65
+                anchors.topMargin: 80
                 anchors.rightMargin: 45
                 anchors.leftMargin: 45
                 radius: 10
@@ -70,7 +70,7 @@ Item {
                         anchors.right: parent.right
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
-                        font.pixelSize: 12
+                        font.pixelSize: 16
                         wrapMode: Text.Wrap
                         clip: true
                         anchors.topMargin: 10
@@ -80,13 +80,13 @@ Item {
 
 
 
-                        property string placeholderText: "Enter text here..."
+                        property string placeholderText: "এখানে পাঠ্য প্রবেশ করুন..."
                         color: "#ffffff"
 
                         Text {
                             text: sentifield.placeholderText
                             color: "#aaa"
-                            visible: !textEdit.text
+                            visible: !sentifield.text
                         }
                     }
 
@@ -113,8 +113,9 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.rightMargin: 137
-                    anchors.leftMargin: 162
+                    anchors.verticalCenterOffset: 5
+                    anchors.rightMargin: 74
+                    anchors.leftMargin: 225
                     btnIconSource: "../../images/svg_images/open_icon.svg"
                     btnColorDefault: "#5b687d"
                     antialiasing: false
@@ -130,11 +131,12 @@ Item {
                 Label {
                     id: label
                     color: "#ffffff"
-                    text: qsTr("Enter Text from .txt file")
+                    text: qsTr("পাঠ্য প্রবেশ করুন.txt ফাইল হতে")
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
+                    font.pointSize: 12
                     anchors.rightMargin: 282
                     anchors.leftMargin: 0
                     anchors.bottomMargin: 15
@@ -144,9 +146,10 @@ Item {
 
             CustomButton{
                 id: sentiButton
-                text: "Analize sentiment"
+                text: "বিশ্লেষণ"
                 anchors.left: parent.left
                 anchors.top: fromTxtFileArea.bottom
+                font.pointSize: 12
                 anchors.topMargin: 10
                 anchors.leftMargin: 45
                 colorDefault: "#5b687d"
@@ -168,33 +171,16 @@ Item {
                 anchors.top: sentiButton.bottom
                 anchors.rightMargin: 45
                 anchors.leftMargin: 45
-                anchors.topMargin: 20
-
-                Image {
-                    id: sentimentImage
-                    x: 650
-                    y: 374
-                    anchors.left: outputText.right
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
-                    source: sentiImage
-                    anchors.bottomMargin: 10
-                    anchors.leftMargin: 20
-                    anchors.topMargin: 10
-                    anchors.rightMargin: 10
-                    fillMode: Image.PreserveAspectFit
-
-                }
+                anchors.topMargin: 10
 
                 Rectangle {
                     id: outputRec
                     color: "#282c34"
                     anchors.left: parent.left
-                    anchors.right: sentimentImage.left
+                    anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
-                    anchors.rightMargin: 200
+                    anchors.rightMargin: 400
                     anchors.leftMargin: 0
                     anchors.bottomMargin: 30
                     anchors.topMargin: 30
@@ -261,6 +247,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:15}D{i:14}D{i:12}
+    D{i:0;autoSize:true;height:480;width:640}
 }
 ##^##*/

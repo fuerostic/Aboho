@@ -1,74 +1,110 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
+import "../controls"
 
 Item {
     Rectangle {
         id: rectangle
-        color: "#55aaff"
+        color: "#393939"
         anchors.fill: parent
-
-        Label {
-            id: label
-            x: 387
-            y: 214
-            text: qsTr("Home Page")
-            anchors.verticalCenter: parent.verticalCenter
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            anchors.verticalCenterOffset: -204
-            anchors.horizontalCenterOffset: -225
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.pointSize: 16
-        }
 
         Rectangle {
             id: rectangle1
-            x: 34
-            y: 124
-            width: 562
             height: 229
             color: "#00000000"
-
-            TextField {
-                id: textNameField
-                x: 81
-                y: 28
-                placeholderText: qsTr("Text Field")
-            }
-
-            Button {
-                id: submitButton
-                x: 328
-                y: 28
-                text: qsTr("Button")
-
-                onClicked: {
-                    backend.welcomeText(textNameField.text)
-                }
-            }
-
-            Label {
-                id: labelName
-                x: 267
-                y: -38
-                width: 119
-                height: 37
-                text: qsTr("Label")
-            }
-        }
-
-        TextEdit {
-            id: textEdit
-            height: 161
-            text: qsTr("Text Edit")
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            font.pixelSize: 12
-            wrapMode: Text.Wrap
-            anchors.topMargin: 223
-            anchors.leftMargin: 99
-            anchors.rightMargin: 168
+            anchors.topMargin: 200
+            anchors.rightMargin: 45
+            anchors.leftMargin: 45
+
+            CustomImageNavButton{
+                id: summaryPageButton
+                x: 87
+                width: 126
+                height: 213
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.right: sentimentPageButton.left
+                font.pointSize: 16
+                buttonLabel: ""
+                btnIconSource: "../../images/report.png"
+                anchors.rightMargin: 79
+                anchors.verticalCenterOffset: 0
+
+                onClicked: {
+                    btnHome.isActiveMenu = false
+                    btnSummarize.isActiveMenu = true
+                    btnSentiment.isActiveMenu = false
+                    btnWordCloud.isActiveMenu = false
+                    btnSettings.isActiveMenu = false
+
+                    pagesHomeView.visible = false
+                    pagesSummarizeView.visible = true
+                    pagesSentimentView.visible = false
+                    pagesWordCloudView.visible = false
+                    pagesSettingsView.visible = false
+
+
+
+                }
+
+            }
+
+            CustomImageNavButton {
+                id: sentimentPageButton
+                x: 270
+                width: 126
+                height: 213
+                anchors.verticalCenter: parent.verticalCenter
+                btnIconSource: "../../images/feedback.png"
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenterOffset: 0
+
+                onClicked: {
+
+                    btnHome.isActiveMenu = false
+                    btnSummarize.isActiveMenu = false
+                    btnSentiment.isActiveMenu = true
+                    btnWordCloud.isActiveMenu = false
+                    btnSettings.isActiveMenu = false
+
+                    pagesHomeView.visible = false
+                    pagesSummarizeView.visible = false
+                    pagesSentimentView.visible = true
+                    pagesWordCloudView.visible = false
+                    pagesSettingsView.visible = false
+
+                }
+            }
+
+            CustomImageNavButton {
+                id: wordCloudPageButton
+                x: 270
+                width: 126
+                height: 213
+                anchors.verticalCenter: parent.verticalCenter
+                btnIconSource: "../../images/cloud.png"
+                anchors.horizontalCenterOffset: 213
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenterOffset: 0
+
+                onClicked: {
+
+                    btnHome.isActiveMenu = false
+                    btnSummarize.isActiveMenu = false
+                    btnSentiment.isActiveMenu = false
+                    btnWordCloud.isActiveMenu = true
+                    btnSettings.isActiveMenu = false
+
+                    pagesHomeView.visible = false
+                    pagesSummarizeView.visible = false
+                    pagesSentimentView.visible = false
+                    pagesWordCloudView.visible = true
+                    pagesSettingsView.visible = false
+
+                }
+            }
         }
     }
 
@@ -84,6 +120,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:7}
+    D{i:0;autoSize:true;height:480;width:800}
 }
 ##^##*/

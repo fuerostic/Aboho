@@ -16,8 +16,8 @@ def sentimentAnalyser(sentence):
     output = nlp(sentence)
 
     if output[0]['score'] < 0.3 :
-        return "neutral"
+        return "নিরপেক্ষ"
     elif output[0]['label'] == 'LABEL_1':
-        return "positive"
+        return "ইতিবাচক"
     else:
-        return "negative"
+        return "নেতিবাচক "

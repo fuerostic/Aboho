@@ -28,14 +28,14 @@ Item {
             Label {
                 id: sentiLabel
                 color: "#e6e8e9"
-                text: qsTr("Word Cloud Page")
+                text: qsTr("শব্দ মেঘ তৈরিকরণ")
                 anchors.left: parent.left
                 anchors.top: parent.top
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 anchors.leftMargin: 56
-                anchors.topMargin: 22
-                font.pointSize: 16
+                anchors.topMargin: 20
+                font.pointSize: 26
             }
 
             Rectangle {
@@ -45,8 +45,8 @@ Item {
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 500
-                anchors.topMargin: 65
+                anchors.bottomMargin: 450
+                anchors.topMargin: 80
                 anchors.rightMargin: 45
                 anchors.leftMargin: 45
                 radius: 10
@@ -65,12 +65,12 @@ Item {
 
                     TextEdit {
                         id: cloudfield
-                        //text: qsTr("Enter text here")
+                        //text: qsTr("এখানে পাঠ্য প্রবেশ করুন")
                         anchors.left: parent.left
                         anchors.right: parent.right
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
-                        font.pixelSize: 12
+                        font.pixelSize: 16
                         wrapMode: Text.Wrap
                         clip: true
                         anchors.topMargin: 10
@@ -80,13 +80,13 @@ Item {
 
 
 
-                        property string placeholderText: "Enter text here..."
+                        property string placeholderText: "এখানে পাঠ্য প্রবেশ করুন..."
                         color: "#ffffff"
 
                         Text {
-                            text: sentifield.placeholderText
+                            text: cloudfield.placeholderText
                             color: "#aaa"
-                            visible: !textEdit.text
+                            visible: !cloudfield.text
                         }
                     }
 
@@ -113,8 +113,9 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.rightMargin: 137
-                    anchors.leftMargin: 162
+                    anchors.verticalCenterOffset: 5
+                    anchors.rightMargin: 52
+                    anchors.leftMargin: 248
                     btnIconSource: "../../images/svg_images/open_icon.svg"
                     btnColorDefault: "#5b687d"
                     antialiasing: false
@@ -130,11 +131,12 @@ Item {
                 Label {
                     id: label
                     color: "#ffffff"
-                    text: qsTr("Enter Text from .txt file")
+                    text: qsTr("পাঠ্য প্রবেশ করুন .txt ফাইল হতে")
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
+                    font.pointSize: 12
                     anchors.rightMargin: 282
                     anchors.leftMargin: 0
                     anchors.bottomMargin: 15
@@ -144,11 +146,11 @@ Item {
 
             CustomButton{
                 id: sentiButton
-                text: "Submit"
+                width: 200
+                text: "প্রবেশ করুন"
                 anchors.left: fromTxtFileArea.right
-                anchors.right: parent.right
                 anchors.top: textInputBorder.bottom
-                anchors.rightMargin: 90
+                font.pointSize: 12
                 anchors.leftMargin: 20
                 anchors.topMargin: 25
                 colorDefault: "#5b687d"
@@ -224,6 +226,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:600;width:800}D{i:11}D{i:13}
+    D{i:0;autoSize:true;height:600;width:800}
 }
 ##^##*/
