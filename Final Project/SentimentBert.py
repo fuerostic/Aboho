@@ -3,21 +3,25 @@
 # if __name__ == "__main__":
 #     pass
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+from bendeep import sentiment
+
+model_path = "senti_trained.pt"
+vocab_path = "vocab.txt"
 
 
 def sentimentAnalyser(sentence):
 
-    tokenizer = AutoTokenizer.from_pretrained("sagorsarker/bangla-bert-sentiment")
+#    tokenizer = AutoTokenizer.from_pretrained("sagorsarker/bangla-bert-sentiment")
 
-    model = AutoModelForSequenceClassification.from_pretrained("sagorsarker/bangla-bert-sentiment")
+#    model = AutoModelForSequenceClassification.from_pretrained("sagorsarker/bangla-bert-sentiment")
 
-    nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
+#    nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
 
-    output = nlp(sentence)
+    output = sentiment.analyze(model_path, vocab_path, sentence)
+    #print("output is" + output)
 
-    if output[0]['score'] < 0.3 :
-        return "নিরপেক্ষ"
-    elif output[0]['label'] == 'LABEL_1':
-        return "ইতিবাচক"
-    else:
+    if output == "negative" :
         return "নেতিবাচক "
+
+    else:
+        return "ইতিবাচক"

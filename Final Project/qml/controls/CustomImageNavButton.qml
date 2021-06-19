@@ -24,23 +24,7 @@ Button{
                                    }
     }
 
-    Label {
-        id: labelbutton
-        y: 347
-        height: 30
-        color: "#ffffff"
-        text: qsTr(btnNavCustom.buttonLabel)
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        horizontalAlignment: Text.AlignHCenter
-        anchors.rightMargin: 0
-        anchors.leftMargin: 0
-        anchors.bottomMargin: 45
 
-
-
-    }
 
     height: 35
     width: 35
@@ -68,11 +52,28 @@ Button{
             color: "#ffffff"
             antialiasing: false
         }
+        Label {
+            id: labelbutton
+            height: 30
+            color: "#ffffff"
+            text: qsTr(btnNavCustom.buttonLabel)
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: iconBtn.bottom
+            horizontalAlignment: Text.AlignHCenter
+            wrapMode: Text.Wrap
+            anchors.leftMargin: 10
+            anchors.topMargin: 20
+            anchors.rightMargin: 10
+
+
+
+        }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;height:300;width:145}
+    D{i:0;height:300;width:145}D{i:5}
 }
 ##^##*/

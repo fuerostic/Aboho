@@ -33,26 +33,26 @@ class MainWindow(QObject):
     @Slot(str)
     def summaryCreate(self,text):
         print("start")
-        t = MyThread(summarizer,args=text)
-        t.start()
-        t.join () # Be sure to join, otherwise the main thread will run faster than the child thread and you will not get results
-        print (t.get_result())
+#        t = MyThread(summarizer,args=text)
+#        t.start()
+#        t.join () # Be sure to join, otherwise the main thread will run faster than the child thread and you will not get results
+        #print (t.get_result())
 
 
         #ascii_string = unicode_string.encode('ascii', 'ignore')
 
         # text = text.encode('ascii', 'ignore')
 
-        summ = t.get_result()
-
+        summ = summarizer(text)
         #print(text)
+
         self.getInput.emit(summ)
 
 
     @Slot(str)
     def textCopy(self,text):
         clipboard.copy(text)
-        self.getInput.emit("Copied to clipboard")
+        #self.getInput.emit("Copied to clipboard")
 
 
     @Slot(str)
@@ -77,7 +77,7 @@ class MainWindow(QObject):
     def sentimentParsing(self, text):
         print("started")
         result = sentimentAnalyser(text)
-        print(result)
+        #print(result)
         print("ended")
         self.getSentimentInput.emit(result)
 

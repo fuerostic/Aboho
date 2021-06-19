@@ -20,6 +20,20 @@ Item {
         anchors.topMargin: 0
 
 
+        Timer {
+            id: timer
+        }
+
+        function delay(delayTime, cb) {
+            timer.interval = delayTime;
+            timer.repeat = false;
+            timer.triggered.connect(cb);
+            timer.start();
+        }
+
+
+
+
         Rectangle {
             id: conntainerProrgess
 
@@ -213,6 +227,13 @@ Item {
 
                 onClicked:{
 
+                    summarizeButton.text = "প্রক্রিয়াধীন"
+                    summarizeButton.colorDefault = "#ff0000"
+                    bgSummary.delay(500, function() {
+
+
+                            })
+
                     backend.summaryCreate(textEdit.text.toString())
 
                 }
@@ -229,6 +250,9 @@ Item {
                 anchors.rightMargin: 45
 
                 onClicked: {
+
+                    summarizeButton.text = "সংক্ষিপ্ত করুন"
+                    summarizeButton.colorDefault = "#5b687d"
                     textEdit.text = ""
                 }
             }
@@ -259,6 +283,16 @@ Item {
 
         function onGetInput(text){
 
+
+            summarizeButton.text = "সম্পন্ন"
+            summarizeButton.colorDefault = "#00ff00"
+
+            bgSummary.delay(5000, function() {
+                summarizeButton.text = "সংক্ষিপ্ত করুন"
+                summarizeButton.colorDefault = "#5b687d"
+
+                    })
+
             textEdit.text = text
         }
 
@@ -285,6 +319,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.9;height:600;width:1000}D{i:20}
+    D{i:0;autoSize:true;formeditorZoom:0.9;height:600;width:1000}
 }
 ##^##*/

@@ -89,7 +89,7 @@ Window {
     }
 
 
-    title: qsTr("New App")
+    title: qsTr("আবহ")
 
     Rectangle {
         id: bg
@@ -457,9 +457,9 @@ Window {
                         anchors.bottom: parent.bottom
                         font.pointSize: 12
                         anchors.bottomMargin: 25
-                        btnIconSource: "../images/svg_images/settings_black_24dp.svg"
-//                        onClicked: {
-//                            btnHome.isActiveMenu = false
+                        btnIconSource: "../images/svg_images/info_black_24dp.svg"
+                        //                        onClicked: {
+                        //                            btnHome.isActiveMenu = false
 //                            btnSettings.isActiveMenu = true
 //                            //stackView.push(Qt.resolvedUrl("pages/SettingsPage.qml"))
 //                            pagesView.setSource(Qt.resolvedUrl("pages/SettingsPage.qml"))
@@ -542,7 +542,7 @@ Window {
                     Loader{
                         id: pagesSettingsView
                         anchors.fill: parent
-                        source: Qt.resolvedUrl("pages/SettingsPage.qml")
+                        source: Qt.resolvedUrl("pages/AboutPage.qml")
                         visible: false
 
                     }

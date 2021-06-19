@@ -21,6 +21,18 @@ Item {
         anchors.leftMargin: 0
         anchors.topMargin: 0
 
+        Timer {
+            id: timer
+        }
+
+        function delay(delayTime, cb) {
+            timer.interval = delayTime;
+            timer.repeat = false;
+            timer.triggered.connect(cb);
+            timer.start();
+        }
+
+
         Row {
             id: row
             anchors.fill: parent
@@ -157,7 +169,8 @@ Item {
                 height: 40
 
                 onClicked:{
-
+                    sentiButton.text = "প্রক্রিয়াধীন"
+                    sentiButton.colorDefault = "#ff0000"
                     backend.wordParsing(cloudfield.text)
                 }
             }
@@ -173,6 +186,9 @@ Item {
                 anchors.rightMargin: 45
 
                 onClicked: {
+
+                    sentiButton.text = "প্রবেশ করুন"
+                    sentiButton.colorDefault = "#5b687d"
 
                     cloudfield.text = ""
 
@@ -205,6 +221,15 @@ Item {
             target: backend
 
             function onGetWordCloudInput(text){
+
+                sentiButton.text = "সম্পন্ন"
+                sentiButton.colorDefault = "#00ff00"
+
+                bgSenti.delay(5000, function() {
+                    sentiButton.text = "প্রবেশ করুন"
+                    sentiButton.colorDefault = "#5b687d"
+
+                        })
 
                 item1.cloudImage= "../../"+text
 

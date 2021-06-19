@@ -20,23 +20,23 @@ LoadingPageForm {
             anchors.leftMargin: 283
             anchors.rightMargin: 317
             value: 50
-
+            
             ProgressBar {
                 id: control
                 value: 0.5
                 padding: 2
-
+            
                 background: Rectangle {
                     implicitWidth: 200
                     implicitHeight: 6
                     color: "#e6e6e6"
                     radius: 3
                 }
-
+            
                 contentItem: Item {
                     implicitWidth: 200
                     implicitHeight: 4
-
+            
                     Rectangle {
                         width: control.visualPosition * parent.width
                         height: parent.height
@@ -58,20 +58,20 @@ LoadingPageForm {
             anchors.leftMargin: 368
             anchors.topMargin: 19
         }
-
-
-
+        
+        
+        
 
 
     }
-
+    
     Connections{
-        target: backend-progres
+        target: backend-progres 
 
         function onGetProgress(text,val){
             progressLabel.text = text
             progressBar.value = val
         }
-
+        
     }
 }

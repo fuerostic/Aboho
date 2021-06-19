@@ -21,6 +21,19 @@ Item {
         anchors.leftMargin: 0
         anchors.topMargin: 0
 
+
+
+        Timer {
+            id: timer
+        }
+
+        function delay(delayTime, cb) {
+            timer.interval = delayTime;
+            timer.repeat = false;
+            timer.triggered.connect(cb);
+            timer.start();
+        }
+
         Row {
             id: row
             anchors.fill: parent
@@ -72,6 +85,7 @@ Item {
                         anchors.bottom: parent.bottom
                         font.pixelSize: 16
                         wrapMode: Text.Wrap
+                        selectedTextColor: "#ffffff"
                         clip: true
                         anchors.topMargin: 10
                         anchors.bottomMargin: 10
@@ -157,7 +171,8 @@ Item {
                 height: 40
 
                 onClicked:{
-
+                    sentiButton.text = "প্রক্রিয়াধীন"
+                    sentiButton.colorDefault = "#ff0000"
                     backend.sentimentParsing(sentifield.text)
                 }
             }
@@ -209,6 +224,8 @@ Item {
 
             onClicked: {
 
+                sentiButton.text = "বিশ্লেষণ"
+                sentiButton.colorDefault = "#5b687d"
                 sentifield.text = ""
 
             }
@@ -229,7 +246,17 @@ Item {
 
         function onGetSentimentInput(text){
 
+            sentiButton.text = "সম্পন্ন"
+            sentiButton.colorDefault = "#00ff00"
+
             outputText.text = text
+
+            bgSenti.delay(5000, function() {
+                sentiButton.text = "বিশ্লেষণ"
+                sentiButton.colorDefault = "#5b687d"
+
+                    })
+
         }
 
 

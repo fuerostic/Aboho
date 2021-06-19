@@ -14,22 +14,22 @@ Item {
             color: "#00000000"
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.topMargin: 200
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 50
             anchors.rightMargin: 45
             anchors.leftMargin: 45
 
             CustomImageNavButton{
                 id: summaryPageButton
                 x: 87
-                width: 126
+                width: 200
                 height: 213
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: sentimentPageButton.left
+                anchors.rightMargin: 200
                 font.pointSize: 16
-                buttonLabel: ""
+                buttonLabel: "সংক্ষিপ্তকরন"
                 btnIconSource: "../../images/report.png"
-                anchors.rightMargin: 79
                 anchors.verticalCenterOffset: 0
 
                 onClicked: {
@@ -54,12 +54,15 @@ Item {
             CustomImageNavButton {
                 id: sentimentPageButton
                 x: 270
-                width: 126
-                height: 213
-                anchors.verticalCenter: parent.verticalCenter
-                btnIconSource: "../../images/feedback.png"
+                width: 200
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenterOffset: 0
+                anchors.topMargin: 9
+                anchors.bottomMargin: 8
+                font.pointSize: 16
+                buttonLabel: "অনুভূতি বিশ্লেষণ "
+                btnIconSource: "../../images/feedback.png"
 
                 onClicked: {
 
@@ -80,14 +83,16 @@ Item {
 
             CustomImageNavButton {
                 id: wordCloudPageButton
-                x: 270
-                width: 126
-                height: 213
-                anchors.verticalCenter: parent.verticalCenter
+                width: 200
+                anchors.left: sentimentPageButton.right
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                anchors.leftMargin: 200
+                anchors.topMargin: 9
+                anchors.bottomMargin: 8
+                font.pointSize: 16
+                buttonLabel: "শব্দ মেঘ "
                 btnIconSource: "../../images/cloud.png"
-                anchors.horizontalCenterOffset: 213
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenterOffset: 0
 
                 onClicked: {
 
@@ -106,6 +111,38 @@ Item {
                 }
             }
         }
+
+        Text {
+            id: welcomeText
+            height: 72
+            color: "#ffffff"
+            text: qsTr("আবহ অ্যাপ্লিকেশন এ আপনাকে স্বাগতম!")
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            font.pixelSize: 45
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            anchors.topMargin: 140
+            anchors.leftMargin: 405
+            anchors.rightMargin: 405
+        }
+
+        Text {
+            id: welcomeText1
+            height: 102
+            color: "#ffffff"
+            text: qsTr("আপনার যাত্রা শুরু হোক এখানে")
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            font.pixelSize: 45
+            horizontalAlignment: Text.AlignHCenter
+            anchors.rightMargin: 150
+            font.bold: true
+            anchors.leftMargin: 150
+            anchors.topMargin: 260
+        }
     }
 
     Connections{
@@ -120,6 +157,7 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:800}
+    D{i:0;autoSize:true;formeditorZoom:0.66;height:768;width:1366}D{i:3}D{i:4}D{i:5}D{i:6}
+D{i:7}
 }
 ##^##*/
