@@ -229,13 +229,12 @@ Item {
 
                     summarizeButton.text = "প্রক্রিয়াধীন"
                     summarizeButton.colorDefault = "#ff0000"
-                    bgSummary.delay(500, function() {
+                    bgSummary.delay(10, function() {
 
 
                             })
 
                     backend.summaryCreate(textEdit.text.toString())
-
                 }
             }
 
