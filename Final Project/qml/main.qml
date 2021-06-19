@@ -221,6 +221,7 @@ Window {
 
                     Label {
                         id: label
+                        x: 76
                         color: "#c6c6c6"
                         text: qsTr("আবহ")
                         anchors.left: iconApp.right
@@ -228,6 +229,9 @@ Window {
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
                         verticalAlignment: Text.AlignVCenter
+                        anchors.rightMargin: 1036
+                        anchors.bottomMargin: 0
+                        anchors.topMargin: 0
                         font.pointSize: 20
                         anchors.leftMargin: 5
                     }
