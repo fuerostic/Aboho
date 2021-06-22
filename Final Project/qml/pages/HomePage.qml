@@ -122,6 +122,7 @@ Item {
             anchors.top: parent.top
             font.pixelSize: 45
             horizontalAlignment: Text.AlignHCenter
+            font.italic: false
             font.bold: true
             anchors.topMargin: 140
             anchors.leftMargin: 405
@@ -132,7 +133,7 @@ Item {
             id: welcomeText1
             height: 102
             color: "#ffffff"
-            text: qsTr("আপনার যাত্রা শুরু হোক এখানে")
+            text: qsTr("বাংলা ভাষা ব্যবহারের অগ্রযাত্রায় আপনার যাত্রা শুরু হোক এখানে")
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
@@ -157,7 +158,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.66;height:768;width:1366}D{i:3}D{i:4}D{i:5}D{i:6}
-D{i:7}
+    D{i:0;autoSize:true;formeditorZoom:0.66;height:768;width:1366}
 }
 ##^##*/
