@@ -134,7 +134,7 @@ Item {
                     radiusBtn: 10
 
                     onClicked: {
-                        backend.fileOpen("")
+                        backend.fileCloudOpen("")
                     }
 
 
@@ -189,6 +189,7 @@ Item {
 
                     sentiButton.text = "প্রবেশ করুন"
                     sentiButton.colorDefault = "#5b687d"
+                    imageOutput.visible = false
 
                     cloudfield.text = ""
 
@@ -237,7 +238,7 @@ Item {
             }
 
 
-            function onOpenTxtFile(text){
+            function onOpenCloudTxtFile(text){
                 cloudfield.text = text
             }
 

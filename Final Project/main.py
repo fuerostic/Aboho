@@ -25,6 +25,8 @@ class MainWindow(QObject):
     getInput = Signal(str)
     copyText = Signal(str)
     openTxtFile = Signal(str)
+    openSentiTxtFile = Signal(str)
+    openCloudTxtFile = Signal(str)
     getSentimentInput = Signal(str)
     getWordCloudInput = Signal(str)
     #setSentiment = Signal(str)
@@ -69,6 +71,36 @@ class MainWindow(QObject):
 
         input = "".join(lines)
         self.openTxtFile.emit(input)
+
+    @Slot(str)
+    def fileSentiOpen(self,param):
+        file = easygui.fileopenbox()
+        print(file)
+        texts = []
+        f = open(file,"r",encoding = "utf8")
+
+        lines = f.readlines()
+
+        f.close()
+
+
+        input = "".join(lines)
+        self.openSentiTxtFile.emit(input)
+
+    @Slot(str)
+    def fileCloudOpen(self,param):
+        file = easygui.fileopenbox()
+        print(file)
+        texts = []
+        f = open(file,"r",encoding = "utf8")
+
+        lines = f.readlines()
+
+        f.close()
+
+
+        input = "".join(lines)
+        self.openCloudTxtFile.emit(input)
 
 
 

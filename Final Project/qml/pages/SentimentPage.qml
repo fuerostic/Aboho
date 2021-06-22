@@ -136,7 +136,7 @@ Item {
                     radiusBtn: 10
 
                     onClicked: {
-                        backend.fileOpen("")
+                        backend.fileSentiOpen("")
                     }
 
 
@@ -227,6 +227,7 @@ Item {
                 sentiButton.text = "বিশ্লেষণ"
                 sentiButton.colorDefault = "#5b687d"
                 sentifield.text = ""
+                outputText.text = ""
 
             }
 
@@ -260,7 +261,7 @@ Item {
         }
 
 
-        function onOpenTxtFile(text){
+        function onOpenSentiTxtFile(text){
             sentifield.text = text
         }
 

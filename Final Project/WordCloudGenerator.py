@@ -8,6 +8,10 @@ from wordcloud import WordCloud
 from bnlp.corpus import stopwords
 from bnlp.corpus.util import remove_stopwords
 
+import time
+
+
+
 def cloudGenerate(text):
     rgx = r"[\u0980-\u09FF]+"
     wc = WordCloud(
@@ -19,7 +23,11 @@ def cloudGenerate(text):
         regexp=rgx
     )
 
-    wc.generate(text)
-    wc.to_file('wc_output.png')
+    t = time.localtime()
+    current_time = time.strftime("%H_%M_%S", t)
 
-    return 'wc_output.png'
+    wc.generate(text)
+    source = "outputs/" + current_time +'.png'
+    wc.to_file(source)
+
+    return source
