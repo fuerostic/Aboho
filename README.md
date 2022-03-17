@@ -1,7 +1,5 @@
 ![forks](https://img.shields.io/github/forks/fuerostic/Aboho.svg)
-
 ![stars](https://img.shields.io/github/stars/fuerostic/Aboho.svg)
-
 ![watchers](https://img.shields.io/github/watchers/fuerostic/Aboho.svg)
 
 # Aboho (আবহ) ![licence](https://img.shields.io/github/license/fuerostic/Aboho.svg)
