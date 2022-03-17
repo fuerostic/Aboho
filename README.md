@@ -28,33 +28,33 @@ To use our app :
 4. Users can also choose the same options from the side navbar.
 5. If a user chooses the “সংিǘȼকরন" option, the user will be navigated
    to the text summarization page.
-● In-text summarization page, the user will see a heading
+   - In-text summarization page, the user will see a heading
   named "পাঠƟ সংিǘȼকরণ" at the top.
-● Below the heading, there is a text box where a user has to
+   - Below the heading, there is a text box where a user has to
   type the input text for summarization.
-● Users can also search for a text file for input from his/her
+   - Users can also search for a text file for input from his/her
   desktop/laptop by clicking the file search button below the
   text box.
-● Users have to click the "সংিǘȼ ক˙ন" button to submit the
+   - Users have to click the "সংিǘȼ ক˙ন" button to submit the
   text to get output.
-● As a result, a summarized output will be generated in the
+   - As a result, a summarized output will be generated in the
   same textbox within a few moments.
-● Users can copy the output text to the clipboard by clicking
+   - Users can copy the output text to the clipboard by clicking
   the “copy button” located on the top right corner of the
   page.
-● If a user wants to give another input, he/she has to click the
+   - If a user wants to give another input, he/she has to click the
   “reset button” located beside the “copy button” on the top
   right corner of the summary page.
 6. If a user chooses the “অনভু ূ িত িবেɮষণ" option, the user will be
    navigated to the sentiment analysis page.
-  ● On the sentiment analysis page, the user will see a heading
+  - On the sentiment analysis page, the user will see a heading
     named "অনভু ূ িত িবেɮষণ" at the top.
-  ● Below the heading, there is a text box where a user has to
+  - Below the heading, there is a text box where a user has to
     type the input text for sentiment analysis.
-  ● Users can also search for a text file for input from his/her
+  - Users can also search for a text file for input from his/her
     desktop/laptop by clicking the file search button below the
     text box.
-  ● Users have to click the "িবেɮষণ" button to submit the text to
+  - Users have to click the "িবেɮষণ" button to submit the text to
     get output
 
 ## Dependencies 
