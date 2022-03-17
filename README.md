@@ -9,11 +9,10 @@ Aboho is an application which provides text summarization, sentiment analysis an
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ## Frameworks and Libraries
+![](https://img.shields.io/badge?label=QtQuick&?style=for-the-badge&logo=#41CD52)
 
-
-
-## Operating system
-
+## Compatible Operating System
+![windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
 ## How to use
 
