@@ -19,6 +19,9 @@ Aboho is an application which provides text summarization, sentiment analysis an
 ## Compatible Operating System
 ![windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
+## Installation
+
+
 ## How to use
 To use our app :
 1. First, the user has to launch the app.
@@ -46,15 +49,15 @@ To use our app :
   “reset button” located beside the “copy button” on the top
   right corner of the summary page.
 6. If a user chooses the “অনভু ূ িত িবেɮষণ" option, the user will be
-   navigated to the sentiment analysis page.
-  - On the sentiment analysis page, the user will see a heading
+    navigated to the sentiment analysis page.
+   - On the sentiment analysis page, the user will see a heading
     named "অনভু ূ িত িবেɮষণ" at the top.
-  - Below the heading, there is a text box where a user has to
+   - Below the heading, there is a text box where a user has to
     type the input text for sentiment analysis.
-  - Users can also search for a text file for input from his/her
+   - Users can also search for a text file for input from his/her
     desktop/laptop by clicking the file search button below the
     text box.
-  - Users have to click the "িবেɮষণ" button to submit the text to
+   - Users have to click the "িবেɮষণ" button to submit the text to
     get output
 
 ## Dependencies 
