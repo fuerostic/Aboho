@@ -58,7 +58,29 @@ To use our app :
     desktop/laptop by clicking the file search button below the
     text box.
    - Users have to click the "িবেɮষণ" button to submit the text to
-    get output
+    get output.
+   - As a result, sentiment will be generated in the output text
+      bar below the "িবেɮষণ" button showing whether the input
+      text sentiment is positive(ইিতবাচক) or negative(ĺনিতবাচক).
+   - If a user wants to give another input, he/she has to click the
+      “reset button” located on the top right corner of the
+      sentiment analysis page.
+7. If the user chooses the “শɆ ĺমঘ” option, the user will be navigated
+to the word cloud page.
+   - On the word cloud page, the user will see a heading named
+"শɆ ĺমঘ Ļতিরকরণ" at the top.
+   - Below the heading, there is a text box where a user has to
+type the input text forward cloud generation.
+   - Users can also search for a text file for input from his/her
+desktop/laptop by clicking the file search button below the
+text box.
+   - Users have to click the "Ƶেবশ ক˙ন" button to submit the text
+to get output.
+   - As a result, a word cloud will be generated below the "Ƶেবশ
+ক˙ন" button.
+   - If a user wants to give another input, he/she has to click the
+“reset button” located on the top right corner of the word
+cloud page.
 
 ## Dependencies 
 
